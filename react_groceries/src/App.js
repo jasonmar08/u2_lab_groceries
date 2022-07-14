@@ -3,86 +3,86 @@ import './App.css'
 import Groceries from './components/Groceries.jsx'
 
 const App = () => {
+  const banana = {
+    name: 'Banana',
+    brand: 'Chiquita',
+    units: '1',
+    quantity: '1 lb',
+    isPurchase: ''
+  }
   const apple = {
     name: 'Apple',
-    item: '12 pack',
-    quantity: '1lb',
-    units: '1 unit',
+    brand: 'Fuji',
+    units: '1',
+    quantity: '1 lb',
     isPurchase: ''
   }
-  const pear = {
-    name: 'Pear',
-    item: '12 pack',
-    quantity: '1lb',
-    units: '1 unit',
+  const lemon = {
+    name: 'Lemon',
+    brand: 'Meyer Lemons',
+    units: '1',
+    quantity: '1 lb',
     isPurchase: ''
   }
-  const peach = {
-    name: 'Peach',
-    item: '12 pack',
-    quantity: '1lb',
-    units: '1 unit',
-    isPurchase: ''
+  const [totalBanana, setTotalBanana] = useState(2)
+  const [totalApple, setTotalApple] = useState(6)
+  const [totalLemon, setTotalLemon] = useState(4)
+
+  const removeBanana = () => {
+    if (totalBanana > 0) {
+      let count = totalBanana - 1
+      setTotalBanana(count)
+    }
   }
-  const [totalAppleFruit, setTotalAppleFruit] = useState(5)
-  const [totalPearFruit, setTotalPearFruit] = useState(5)
-  const [totalPeachFruit, setTotalPeachFruit] = useState(5)
 
   const removeApple = () => {
-    if (totalAppleFruit > 0) {
-      let count = totalAppleFruit - 1
-      setTotalAppleFruit(count)
+    if (totalApple > 0) {
+      let count = totalApple - 1
+      setTotalApple(count)
     }
   }
 
-  const removePear = () => {
-    if (totalPearFruit > 0) {
-      let count = totalPearFruit - 1
-      setTotalPearFruit(count)
-    }
-  }
-
-  const removePeach = () => {
-    if (totalPeachFruit > 0) {
-      let count = totalPeachFruit - 1
-      setTotalPeachFruit(count)
+  const removeLemon = () => {
+    if (totalLemon > 0) {
+      let count = totalLemon - 1
+      setTotalLemon(count)
     }
   }
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Grocery List</h1>
+        <h1>Shopping List</h1>
       </header>
       <br />
       <main>
         <Groceries
+          name={banana.name}
+          brand={banana.brand}
+          quantity={banana.quantity}
+          units={banana.units}
+          isPurchase={banana.isPurchase}
+          totalFruit={totalBanana}
+          removeItems={removeBanana}
+        />
+        <br />
+        <Groceries
           name={apple.name}
-          item={apple.item}
+          brand={apple.brand}
           quantity={apple.quantity}
           units={apple.units}
           isPurchase={apple.isPurchase}
-          totalFruit={totalAppleFruit}
+          totalFruit={totalApple}
           removeItems={removeApple}
         />
         <br />
         <Groceries
-          name={pear.name}
-          item={pear.item}
-          quantity={pear.quantity}
-          units={pear.units}
-          isPurchase={pear.isPurchase}
-          totalFruit={totalPearFruit}
-          removeItems={removePear}
-        />
-        <br />
-        <Groceries
-          name={peach.name}
-          item={peach.item}
-          quantity={peach.quantity}
-          units={peach.units}
-          isPurchase={peach.isPurchase}
-          totalFruit={totalPeachFruit}
-          removeItems={removePeach}
+          name={lemon.name}
+          brand={lemon.brand}
+          quantity={lemon.quantity}
+          units={lemon.units}
+          isPurchase={lemon.isPurchase}
+          totalFruit={totalLemon}
+          removeItems={removeLemon}
         />
       </main>
     </div>

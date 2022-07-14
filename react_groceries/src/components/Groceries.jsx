@@ -1,14 +1,13 @@
 const Groceries = ({name, brand, units, quantity, isPurchased, totalFruit, removeItems}) => {
   return (
-    <main>
+    <main className='mainBack'>
       <div class='foodList'>
           <h3>{name}</h3>
-          {/* <p>item: {item}</p> */}
-          <p>Brand: {brand}</p>
-          <p>Units: {units}</p>
-          <p>Quantity: {quantity}</p>
-          <p>Purchased: {isPurchased}</p>
-          <p>{totalFruit}</p>
+          <p><span>Brand:</span> {brand}</p>
+          <p><span>Units:</span> {units}</p>
+          <p><span>Quantity:</span> {quantity}</p>
+          <p><span>Purchased:</span> {isPurchased}</p>
+          <p><span className='totalFruit'>{totalFruit}</span></p>
           <div>
               <button onClick={removeItems}>Remove Item</button>
           </div>

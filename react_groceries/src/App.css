@@ -15,13 +15,13 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 35vh;
+  min-height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(236, 229, 204);
 }
 
 .App-link {
@@ -42,13 +42,18 @@ main {
   background-image: url('https://st2.depositphotos.com/1040166/5971/i/450/depositphotos_59713675-stock-photo-food-background.jpg');
   background-size: cover;
   margin: 0 auto;
-  padding: 50px;
+  padding: 95px;
+}
+
+.mainBack {
+  padding: 35px;
 }
 
 .foodList {
   display: grid;
   background-color: rgb(99, 99, 122);
   padding: 0 30px 15px 30px;
+  width: 130px;
   color: #dcdbdb;
   opacity: 0.95;
 }
@@ -56,6 +61,15 @@ main {
 button {
   background-color: #b6c0d3;
   color: rgb(65, 65, 129);
+  font-weight: bold;
   border-radius: 20%;
   padding: 5px 10px 5px 10px;
+}
+
+span {
+  font-weight: bold;
+}
+
+.totalFruit {
+  color: rgb(229, 216, 168);
 }
